@@ -1,0 +1,79 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+      "key": "ctrl+j",
+      "command": "cursorDown",
+      "when": "!explorerViewletFocus && !suggestWidgetVisible"
+    },
+
+    {
+      "key": "ctrl+k",
+      "command": "cursorLeft"
+      // "when": "editortextfocus && vim.active && !indebugrepl && vim.mode == 'insert'"
+    },
+    {
+      "key": "ctrl+u",
+      "command": "cursorUp",
+      "when": "!explorerViewletFocus && !suggestWidgetVisible"
+    },
+    {
+      "key": "ctrl+l",
+      "command": "cursorRight"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "selectNextSuggestion",
+      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+      "key": "ctrl+u",
+      "command": "selectPrevSuggestion",
+      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "extension.vim_escape",
+      "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "hideSuggestWidget",
+      "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "list.focusDown",
+      "when": "explorerViewletFocus"
+    },
+    {
+      "key": "ctrl+u",
+      "command": "list.focusUp",
+      "when": "explorerViewletFocus"
+    },
+    {
+      "key": "ctrl+t",
+      "command": "workbench.action.focusSideBar",
+      "when": "!listFocus"
+    },
+    {
+      "key": "ctrl+t",
+      "command": "workbench.action.focusActiveEditorGroup",
+      "when": "listFocus"
+    },
+    {
+      "key": "a",
+      "command": "explorer.newFile",
+      "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+      "key": "ctrl+;",
+      "command": "explorer.newFolder",
+      "when": "explorerViewletFocus"
+    },
+    {
+      "key": "u",
+      "command": "list.focusUp",
+      "when": "listFocus && !inputFocus"
+      // "when": "explorerViewletFocus && !inputFocus"
+    }
+]
