@@ -1,0 +1,18 @@
+[user]
+  name = Merik W
+  email = merikwood@gmail.com
+[alias]
+  go = checkout
+  gob = checkout -b
+  co = commit
+  st = status
+  br = branch
+  showskip = !git ls-files -v | grep '^S'
+  skip = update-index --skip-worktree
+  delbr = branch -D
+  undo = !git reset --hard && git clean -fd
+  stepdown = reset HEAD
+  back = !sh -c 'git reset HEAD~$1' -
+  showbr = !git branch | grep -v 'develop\\|master\\|\\*'
+  stuff = stash --keep-index -u
+  count = rev-list --count HEAD
