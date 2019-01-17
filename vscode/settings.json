@@ -1,81 +1,59 @@
 {
-    "editor.detectIndentation": false,
-    "editor.rulers": [
-        80
-    ],
-    "editor.tabSize": 2,
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "after": ["\u003cDown\u003e"],
-            "before": ["j"]
-        },
-        {
-            "after": ["\u003cRight\u003e"],
-            "before": ["l"]
-        },
-        {
-            "after": ["\u003cLeft\u003e"],
-            "before": ["k"]
-        },
-        {
-          "before": ["m"],
-          "commands": [{
-            "command": "undo"
-          }]
-        },
-        {
-            "after": ["\u003cUp\u003e"],
-            "before": ["u"]
-        },
-        {
-            "after": ["V"],
-            "before": ["v"]
-        },
-        {
-            "after": ["v"],
-            "before": ["V"]
-        },
-        {
-            "after": ["$"],
-            "before": [";"]
-        },
-        {
-          "after": ["0"],
-          "before": ["h"]
-        },
-        {
-          "before": ["U"],
-          "commands": [{
-            "command": "cursorPageUp"
-          }]
-        },
-        {
-          "before": ["J"],
-          "commands": [{
-            "command": "cursorPageDown"
-          }]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": [">"],
-            "commands": ["editor.action.indentLines"]
-        },
-        {
-            "before": ["<"],
-            "commands": ["editor.action.outdentLines"]
-        },
-        {
-          "before": ["m"],
-          "commands": [{
-            "command": "undo"
-          }]
-        }
-    ],
-    "workbench.colorTheme": "Monokai",
-    "editor.minimap.enabled": false,
-    "vim.useCtrlKeys": false,
-    "search.location": "panel"
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "after": ["<Left>"],
+      "before": ["k"]
+    },
+    {
+      "after": ["<Up>"],
+      "before": ["u"]
+    },
+    {
+      "before": ["m"],
+      "commands": [{ "command": "undo" }]
+    },
+    {
+      "after": ["V"],
+      "before": ["v"]
+    },
+    {
+      "after": ["v"],
+      "before": ["V"]
+    },
+    {
+      "after": ["$"],
+      "before": [";"]
+    },
+    {
+      "before": ["U"],
+      "commands": [{ "command": "cursorPageUp"}]
+    },
+    {
+      "before": ["J"],
+      "commands": [{ "command": "cursorPageDown"}]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["m"],
+      "commands": [{ "command": "undo"}]
+    },
+    {
+      "before": ["/"],
+      "commands": ["editor.action.commentLine"]
+    }
+  ],
+  "editor.minimap.enabled": false,
+  "vim.useCtrlKeys": false,
+  "search.location": "panel",
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true
 }
