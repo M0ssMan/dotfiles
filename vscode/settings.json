@@ -1,59 +1,47 @@
 {
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "after": ["<Left>"],
-      "before": ["k"]
-    },
-    {
-      "after": ["<Up>"],
-      "before": ["u"]
-    },
-    {
-      "before": ["m"],
-      "commands": [{ "command": "undo" }]
-    },
-    {
-      "after": ["V"],
-      "before": ["v"]
-    },
-    {
-      "after": ["v"],
-      "before": ["V"]
-    },
-    {
-      "after": ["$"],
-      "before": [";"]
-    },
-    {
-      "before": ["U"],
-      "commands": [{ "command": "cursorPageUp"}]
-    },
-    {
-      "before": ["J"],
-      "commands": [{ "command": "cursorPageDown"}]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
-    },
-    {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    },
-    {
-      "before": ["m"],
-      "commands": [{ "command": "undo"}]
-    },
-    {
-      "before": ["/"],
-      "commands": ["editor.action.commentLine"]
-    }
-  ],
+  "breadcrumbs.enabled": false,
+  "editor.autoIndent": false,
+  "editor.detectIndentation": false,
   "editor.minimap.enabled": false,
-  "vim.useCtrlKeys": false,
-  "search.location": "panel",
+  "editor.rulers": [
+      80
+  ],
+  "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  "files.insertFinalNewline": true
+  "editor.tokenColorCustomizations": {
+      "textMateRules": [
+          {
+              "name": "Built-in constant",
+              "scope": "constant.language",
+              "settings": {
+                  "foreground": "#c678dd"
+              }
+          },
+          {
+              "name": "Language Variable",
+              "scope": "variable.language",
+              "settings": {
+                  "fontStyle": "bold",
+                  "foreground": "#abb2bf"
+              }
+          }
+      ]
+  },
+  "editor.useTabStops": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "search.location": "panel",
+  "window.titleBarStyle": "custom",
+  "workbench.colorCustomizations": {
+      "editorBracketMatch.background": "#fb09c7",
+      "editorBracketMatch.border": "#ffffff",
+      "editorInfo.foreground": "#cccccc",
+      "editorOverviewRuler.addedForeground": "#1d8a02",
+      "editorOverviewRuler.warningForeground": "#958b14",
+      "editorWarning.foreground": "#e2cf03",
+      "list.warningForeground": "#958b14"
+  },
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "One Monokai"
 }

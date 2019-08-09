@@ -5,11 +5,9 @@
       "command": "cursorDown",
       "when": "!explorerViewletFocus && !suggestWidgetVisible"
     },
-
     {
       "key": "ctrl+k",
       "command": "cursorLeft"
-      // "when": "editortextfocus && vim.active && !indebugrepl && vim.mode == 'insert'"
     },
     {
       "key": "ctrl+u",
@@ -29,11 +27,6 @@
       "key": "ctrl+u",
       "command": "selectPrevSuggestion",
       "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-      "key": "ctrl+d",
-      "command": "extension.vim_escape",
-      "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible"
     },
     {
       "key": "ctrl+d",
@@ -74,6 +67,130 @@
       "key": "u",
       "command": "list.focusUp",
       "when": "listFocus && !inputFocus"
-      // "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+      "key": "ctrl+shift+0",
+      "command": "workbench.action.closePanel"
+    },
+    {
+      "key": "ctrl+shift+9",
+      "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+      "key": "ctrl+h",
+      "command": "cursorHome"
+    },
+    {
+      "key": "ctrl+;",
+      "command": "cursorEnd"
+    },
+    {
+      "key": "ctrl+shift+g",
+      "command": "workbench.action.gotoLine"
+    },
+    {
+      "key": "ctrl+g",
+      "command": "-workbench.action.gotoLine"
+    },
+    {
+      "key": "ctrl+g",
+      "command": "editor.action.nextMatchFindAction",
+      "when": "editorFocus"
+    },
+    {
+      "key": "f3",
+      "command": "-editor.action.nextMatchFindAction",
+      "when": "editorFocus"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "closeFindWidget",
+      "when": "editorFocus && findWidgetVisible"
+    },
+    {
+      "key": "escape",
+      "command": "-closeFindWidget",
+      "when": "editorFocus && findWidgetVisible"
+    },
+    {
+      "key": "ctrl+shift+8",
+      "command": "editor.action.toggleTabFocusMode"
+    },
+    {
+      "key": "ctrl+m",
+      "command": "-editor.action.toggleTabFocusMode"
+    },
+    {
+      "key": "ctrl+shift+7",
+      "command": "editor.action.selectHighlights",
+      "when": "editorFocus"
+    },
+    {
+      "key": "ctrl+shift+l",
+      "command": "-editor.action.selectHighlights",
+      "when": "editorFocus"
+    },
+    {
+      "key": "ctrl+shift+l",
+      "command": "expandLineSelection",
+      "when": "textInputFocus"
+    },
+    {
+      "key": "ctrl+l",
+      "command": "-expandLineSelection",
+      "when": "textInputFocus"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "cancelSelection",
+      "when": "textInputFocus"
+    },
+    {
+      "key": "ctrl+u",
+      "command": "-cursorUndo",
+      "when": "textInputFocus"
+    },
+    {
+      "key": "ctrl+shift+0",
+      "command": "workbench.action.togglePanel"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "-workbench.action.togglePanel"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "cursorWordLeft",
+      "when": "textInputFocus && !editorReadOnly"
+    },
+    {
+      "key": "ctrl+shift+i",
+      "command": "cursorWordLeftSelect",
+      "when": "textInputFocus && !editorReadOnly"
+    },
+    {
+      "key": "ctrl+o",
+      "command": "cursorWordRight",
+      "when": "textInputFocus && !editorReadOnly"
+    },
+    {
+      "key": "ctrl+shift+o",
+      "command": "cursorWordRightSelect",
+      "when": "textInputFocus && !editorReadOnly"
+    },
+    {
+      "key": "ctrl+m",
+      "command": "deleteLeft",
+      "when": "textInputFocus && !editorReadOnly"
+    },
+    {
+      "key": "ctrl+shift+/",
+      "command": "editor.unfoldAll",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+k ctrl+j",
+      "command": "-editor.unfoldAll",
+      "when": "editorTextFocus"
     }
 ]
