@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PORT=$(lsof -t -i:$1 -sTCP:LISTEN)
+if [ -z "$PORT" ]
+then
+  echo "no active port found"
+else
+  kill "$PORT"
+  echo "kill sent to port $1 | PID $PORT"
+fi
