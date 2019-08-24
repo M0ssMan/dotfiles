@@ -192,5 +192,13 @@
       "key": "ctrl+k ctrl+j",
       "command": "-editor.unfoldAll",
       "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+shift+/",
+      "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+      "key": "ctrl+`",
+      "command": "-workbench.action.terminal.toggleTerminal"
     }
 ]
