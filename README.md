@@ -1,22 +1,31 @@
 # dotfiles
 
-## Mac Bootstrap
-#### Brew
+### View Stowed Files
+```
+find -lname '*dotfiles*' -printf '%P -> %l\n'
+```
+
+### Flags for Stow Dry Run
+```
+-nv
+```
+
+## Mac
+
+#### Bootstrap Stow
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-
-#### Stow
 ```
 brew install stow
 ```
 
-#### VS Code
+#### VS Code stow
 ```
 stow --target=$HOME/Library/Application\ Support vscode
 ```
 
-## VS Code Unstow
+#### VS Code Unstow
 ```
 stow -D --target=$HOME/Library/Application\ Support vscode
 ```
@@ -28,3 +37,7 @@ stow -D --target=$HOME/Library/Application\ Support vscode
 stow --target=$HOME/.config vscode
 ```
 
+#### VS Code Unstow
+```
+stow -D --target=$HOME/.config vscode
+```
