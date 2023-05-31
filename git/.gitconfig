@@ -1,6 +1,8 @@
 [user]
   name = Merik W
   email = merikwood@gmail.com
+[core]
+  editor = nano
 [alias]
   go = checkout
   gob = checkout -b
@@ -16,5 +18,12 @@
   showbr = !git branch | grep -v 'develop\\|master\\|\\*'
   stuff = stash --keep-index -u
   count = rev-list --count HEAD
-  gpush = !git push upstream upmaster:master && git push origin upmaster && git checkout master && git rebase upmaster && git push --force origin master
-  gpull = !git checkout master && git fetch origin && git reset --soft origin/master
+  # This pushes local upmaster branch to remote upstream master branch, 
+  # then rebases any upmaster changes onto local master (ie: work specific branch) 
+  # and then pushes the local master branch to the work remote master branch
+  gpush = !git push upstream upmaster:master && git checkout master && git rebase upmaster && git push origin master
+  # This pulls remote master branch into local master 
+  # and pulls upstream master into local upmaster
+  # and then rebases any upstream changes into master
+  # To avoid confusion probably should gpush after an update but I'm not sure if holding off will break anything
+  gupdate = !git checkout master && git pull origin master && git checkout upmaster && git pull upstream master && git checkout master && git rebase upmaster master && git push origin master
