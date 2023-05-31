@@ -23,4 +23,5 @@
   # and then FORCE pushes the local master branch to the work remote master branch
   gpush = !git push upstream upmaster:master && git checkout master && git rebase upmaster && git push --force origin master
   # FORCE pulls work remote master branch wiping any local changes
-  gpull = !git checkout master && git fetch origin master && git reset --hard origin/master
+  # Also pulls upstream master changes
+  gpull = !git checkout upmaster && git pull upstream master && git checkout master && git fetch origin master && git reset --hard origin/master
