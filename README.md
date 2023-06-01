@@ -31,6 +31,7 @@ That storage setting is set in the local .gitconfig file for the specific dotfil
 ## Using Stow
 
 [Quick Explanation](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
+
 **NOTE:** I'm pretty sure when running stow commands you should always be in the dotfiles directory
 
 ### Mac bootstrap stow
