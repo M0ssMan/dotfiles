@@ -1,5 +1,8 @@
 # dotfiles
 
+**NOTE:** I've given up trying to maintain two versions of dotfiles. It was just too much work trying to sync them and deal with merge conflicts.
+I think it is easier to just manually transfer over changes I need at this point.
+
 ## Git Sync Commands
 
 For use on work computers use the "g" commands
@@ -28,6 +31,7 @@ That storage setting is set in the local .gitconfig file for the specific dotfil
 ## Using Stow
 
 [Quick Explanation](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
+**NOTE:** I'm pretty sure when running stow commands you should always be in the dotfiles directory
 
 ### Mac bootstrap stow
 
@@ -39,6 +43,9 @@ brew install stow
 ```
 
 ### View Stowed Files
+**NOTE:** Currently this needs to be run at the top level of a directory to find the linkage.
+At some point I would like to rewrite so that no matter where a user is in any directory they
+will be able to see all dotfile linkages
 ```
 find -lname '*dotfiles*' -printf '%P -> %l\n'
 ```
