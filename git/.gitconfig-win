@@ -1,0 +1,6 @@
+[merge]
+	tool = meld
+[mergetool "meld"]
+	prompt = false
+	keepBackup = false
+	path = "C:/Users/mwoodmansee/AppData/Local/Programs/Meld/meld.exe"

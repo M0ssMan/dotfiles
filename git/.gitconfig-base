@@ -1,11 +1,6 @@
-[user]
-  name = Merik W
-  email = merikwood@gmail.com
-[core]
-  editor = nano
 [alias]
-  go = checkout
-  gob = checkout -b
+  go = switch
+  gob = switch -c
   co = commit
   st = status
   br = branch
@@ -21,7 +16,7 @@
   # This pushes local upmaster branch to remote upstream master branch, 
   # then rebases any upmaster changes onto local master (ie: work specific branch) 
   # and then FORCE pushes the local master branch to the work remote master branch
-  gpush = !git push upstream upmaster:master && git checkout master && git rebase upmaster && git push --force origin master
+  # gpush = !git push upstream upmaster:master && git checkout master && git rebase upmaster && git push --force origin master
   # FORCE pulls work remote master branch wiping any local changes
   # Also pulls upstream master changes
-  gpull = !git checkout upmaster && git pull upstream master && git checkout master && git fetch origin master && git reset --hard origin/master
+  # gpull = !git checkout upmaster && git pull upstream master && git checkout master && git fetch origin master && git reset --hard origin/master
