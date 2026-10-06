@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# Verify a file's SHA-256 checksum on macOS or Linux.
+# Prompts for the expected checksum, then for the file path.
+
+set -u
+
+# Pick whichever SHA-256 tool is available.
+sha256_of() {
+  if command -v sha256sum >/dev/null 2>&1; then
+    sha256sum "$1" | awk '{print $1}'
+  elif command -v shasum >/dev/null 2>&1; then
+    shasum -a 256 "$1" | awk '{print $1}'
+  elif command -v openssl >/dev/null 2>&1; then
+    openssl dgst -sha256 "$1" | awk '{print $NF}'
+  else
+    echo "Error: need sha256sum, shasum, or openssl installed." >&2
+    return 127
+  fi
+}
+
+# Prompt 1: expected checksum
+read -r -p "Expected SHA-256 checksum: " expected
+expected=$(printf '%s' "$expected" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')
+
+if ! [[ "$expected" =~ ^[0-9a-f]{64}$ ]]; then
+  echo "Error: that doesn't look like a valid SHA-256 hash (expected 64 hex characters)." >&2
+  exit 2
+fi
+
+# Prompt 2: file path
+read -r -p "Path to file: " filepath
+
+# Strip surrounding quotes (e.g. from drag-and-drop) and expand a leading ~
+filepath="${filepath%\"}"; filepath="${filepath#\"}"
+filepath="${filepath%\'}"; filepath="${filepath#\'}"
+filepath="${filepath/#\~/$HOME}"
+
+if [[ ! -f "$filepath" ]]; then
+  echo "Error: file not found: $filepath" >&2
+  exit 2
+fi
+
+actual=$(sha256_of "$filepath") || exit $?
+# sha256sum/shasum prefix the hash with a backslash when the filename contains
+# a backslash; hex hashes never contain one, so it's safe to strip.
+actual=$(printf '%s' "$actual" | tr -d '\\' | tr '[:upper:]' '[:lower:]')
+
+echo
+echo "Expected: $expected"
+echo "Actual:   $actual"
+echo
+
+if [[ "$expected" == "$actual" ]]; then
+  echo "✅ Checksum MATCHES"
+  exit 0
+else
+  echo "❌ Checksum does NOT match"
+  exit 1
+fi
