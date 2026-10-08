@@ -29,9 +29,9 @@ How to open a split panel
 
 `:vsplit /path/to/your/file-2.txt`
 
-How to switch from one split panel to another
+How to cycle from one split panel to another
 
-`ctrl + w`
+`ctrl + w` + `w`
 
 How to select lines
 
