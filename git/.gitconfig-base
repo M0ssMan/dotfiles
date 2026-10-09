@@ -8,13 +8,16 @@
   skip = update-index --skip-worktree
   delbr = branch -D
   undo = !git reset --hard && git clean -fd
+  uncommit = reset --soft HEAD~1
+  cleanup-preview = "!git branch --merged develop | grep -Ev '^\\*|^\\s*(master|main|develop|staging)$'"
+  cleanup = "!git branch --merged develop | grep -Ev '^\\*|^\\s*(master|main|develop|staging)$' | xargs git branch -d"
   stepdown = reset HEAD
   back = !sh -c 'git reset HEAD~$1' -
   showbr = !git branch | grep -v 'develop\\|master\\|\\*'
   stuff = stash --keep-index -u
   count = rev-list --count HEAD
-  # This pushes local upmaster branch to remote upstream master branch, 
-  # then rebases any upmaster changes onto local master (ie: work specific branch) 
+  # This pushes local upmaster branch to remote upstream master branch,
+  # then rebases any upmaster changes onto local master (ie: work specific branch)
   # and then FORCE pushes the local master branch to the work remote master branch
   # gpush = !git push upstream upmaster:master && git checkout master && git rebase upmaster && git push --force origin master
   # FORCE pulls work remote master branch wiping any local changes
