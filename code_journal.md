@@ -23,6 +23,24 @@ Thoughts on categories. The following is the priority list so if two exist, one 
 * CONFIG -- Changes that only involve config files (ie: package.json scripts etc)
 * DOCS -- Any changes to only docs or code comments
 
+### Git Hub Stacks Workflow
+
+1. Create JIRA ticket git branch
+2. `gh stack init <first_branch>`
+3. `gh stack add <additional_branches>`
+
+Anytime during workflow you can run
+
+4. `gh stack sync`
+
+Syncing will push any stack branches up to github
+
+Use GitHub UI to create Pull Requests. When creating PRs remember to:
+
+5. Make base branch the previous branch (for branches above 1st)
+
+6. In GitHub UI, a popup will appear for adding your branch to the stack.
+
 ### Vim
 
 How to open a split panel
