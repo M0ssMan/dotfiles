@@ -6,9 +6,13 @@ List all package depending on a specific package
 
 ### Git
 
-Up to date rebase from origin/master
+Up to date rebase from origin/main_branch
 
-`git pull --rebase origin master`
+`git pull --rebase origin ${main_branch}`
+
+Fix accidental branch creation (working_branch) on an incorrect base branch
+
+`git rebase --onto ${correct_base_branch} ${incorrect_base_branch} ${working_branch}`
 
 #### Commit Messages
 
