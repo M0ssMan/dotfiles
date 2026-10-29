@@ -30,8 +30,11 @@ Thoughts on categories. The following is the priority list so if two exist, one 
 ### Git Hub Stacks Workflow
 
 1. Create JIRA ticket git branch
-2. `gh stack init <first_branch>`
-3. `gh stack add <additional_branches>`
+2. `gh stack init ${first_branch}`
+
+Create new branches with the stack add command
+
+3. `gh stack add ${branch_to_be_created}`
 
 Anytime during workflow you can run
 
